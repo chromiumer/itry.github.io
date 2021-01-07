@@ -1,1 +1,83 @@
-it works
+<head>
+    <link rel="stylesheet" type="text/css"  href="./css/bootstrap.min.css">
+</head>
+<body>
+
+    <div class="container">
+    <div class="alert alert-primary">百度：www.baidu.com <a id="domain1" >Loading...</a></div>
+    <div class="alert alert-primary">腾讯：www.qq.com <a id="domain2" >Loading...</a></div>
+    <div class="alert alert-primary">阿里云：www.aliyun.com <a id="domain3" >Loading...</a></div>
+    <div class="alert alert-primary">淘宝：www.taobao.com <a id="domain4" >Loading...</a></div>
+    <div class="alert alert-primary">Google：www.google.com <a id="domain5" >Loading...</a></div>
+    <div class="alert alert-primary">YouTube：youtube.com <a id="domain6" >Loading...</a></div>
+    <div class="alert alert-primary">Gmail：mail.google.com <a id="domain7" >Loading...</a></div>
+
+</div>
+
+
+
+<script src="./js/jquery-1.11.0.min.js"> </script>
+<script src="./js/bootstrap.min.js"> </script>
+<script src="./js/ping.js"></script>
+<script>
+
+$(document).ready(function(){
+
+var ms="毫秒"
+var strtimout="  连接超时 💢 💔💔💔"
+var domainname = $("#domain1-name").text();
+arr = domainname.split(" ");
+
+    ping("https://www.baidu.com").then(function(delta) {
+        $("#domain1").text("延时: " + delta + ms);
+
+    }).catch(function(error) {
+        $("#domain1").text(strtimout);
+    });
+
+    ping("https://www.qq.com").then(function(delta) {
+        $("#domain2").text("延时: " + delta + ms);
+
+    }).catch(function(error) {
+        $("#domain2").text(strtimout);
+    });
+
+    ping("https://www.aliyun.com").then(function(delta) {
+        $("#domain3").text("延时: " + delta + ms);
+
+    }).catch(function(error) {
+        $("#domain3").text(strtimout);
+    });
+
+    ping("https://www.taobao.com").then(function(delta) {
+        $("#domain4").text("延时: " + delta + ms);
+
+    }).catch(function(error) {
+        $("#domain4").text(strtimout);
+    });
+
+    ping("https://mail.google.com").then(function(delta) {
+        $("#domain5").text("延时: " + delta + ms);
+
+    }).catch(function(error) {
+        $("#domain5").text(strtimout);
+    });
+
+    ping("https://youtube.com").then(function(delta) {
+        $("#domain6").text("延时: " + delta + ms);
+
+    }).catch(function(error) {
+        $("#domain6").text(strtimout);
+    });
+
+    ping("https://mail.google.com").then(function(delta) {
+        $("#domain7").text("延时: " + delta + ms);
+
+    }).catch(function(error) {
+        $("#domain7").text(strtimout);
+    });
+    
+});
+</script>
+
+</body>
